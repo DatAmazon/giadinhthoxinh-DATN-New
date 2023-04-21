@@ -20,6 +20,7 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã sản phẩm")]
         public int FK_iProductID { get; set; }
         [Display(Name = "Màu sản phẩm")]
+        [Required(ErrorMessage = "Vui lòng nhập màu sắc")]
         public string sProductColor { get; set; }
 
         public virtual tblProduct tblProduct { get; set; }

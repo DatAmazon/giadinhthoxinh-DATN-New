@@ -133,3 +133,8 @@
     color: var(--color-name);
     opacity: 0.8;
 }
+
+.centered-div {
+    display: flex;
+    justify-content: center;
+}

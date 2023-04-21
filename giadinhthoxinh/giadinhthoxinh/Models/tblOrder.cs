@@ -25,14 +25,18 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã tài khoản")]
         public int FK_iAccountID { get; set; }
         [Display(Name = "Tên khách hàng")]
+        [Required(ErrorMessage = "Vui lòng nhập tên khách hàng")]
         public string sCustomerName { get; set; }
         [Display(Name = "SĐT khách hàng")]
+        [Required(ErrorMessage = "Vui lòng nhập SĐT khách hàng")]
         public string sCustomerPhone { get; set; }
         [Display(Name = "Địa chỉ giao hàng")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ giao hàng")]
         public string sDeliveryAddress { get; set; }
         [Display(Name = "Ngày lập")]
-        public Nullable<System.DateTime> dInvoidDate { get; set; }
+        public System.DateTime dInvoidDate { get; set; }
         [Display(Name = "Người lập")]
+        [Required(ErrorMessage = "Vui lòng nhập tên người lập")]
         public string sBiller { get; set; }
         [Display(Name = "Hình thức thanh toán")]
         public Nullable<int> iDeliveryMethod { get; set; }

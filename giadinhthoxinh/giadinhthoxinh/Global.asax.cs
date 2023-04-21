@@ -1,4 +1,5 @@
-﻿using System;
+﻿using giadinhthoxinh.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,10 @@ namespace giadinhthoxinh
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+        protected void Session_Start()
+        {
+            Session["giohang"] = new Cart();
         }
     }
 }

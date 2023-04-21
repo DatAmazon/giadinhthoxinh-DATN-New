@@ -72,7 +72,9 @@
                                 @Html.DisplayFor(modelItem => item.sDescribe)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.fPrice)
+                                @*@Html.DisplayFor(modelItem => item.fPrice)*@
+                                @string.Format("{0:#,0}", item.fPrice) vnđ
+
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.sColor)
@@ -80,8 +82,9 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.sSize)
                             </td>
-                            <td style="overflow-wrap: break-word; word-wrap:break-word">
-                                @Html.DisplayFor(modelItem => item.sImage)
+                            <td>
+                                @*@Html.DisplayFor(modelItem => item.sImage)*@
+                                <img src="@Url.Content(item.sImage)" style="width: 70px; height: 70px; object-fit: cover" />
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.sUnit)

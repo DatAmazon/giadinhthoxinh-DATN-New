@@ -26,12 +26,15 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã nguyên liệu")]
         public int PK_iMaterialID { get; set; }
         [Display(Name = "Tên nguyên liệu")]
+        [Required(ErrorMessage = "Vui lòng nhập tên nguyên liệu")]
         public string sMaterialName { get; set; }
         [Display(Name = "Mô tả")]
         public string sDescribe { get; set; }
         [Display(Name = "Số lượng")]
-        public Nullable<int> iQuatity { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập số lượng")]
+        public int iQuatity { get; set; }
         [Display(Name = "Đơn vị")]
+        [Required(ErrorMessage = "Vui lòng nhập đơn vị")]
         public string sUnit { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

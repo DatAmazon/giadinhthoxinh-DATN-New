@@ -1,4 +1,5 @@
-﻿using System;
+﻿using giadinhthoxinh.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,14 +10,17 @@ namespace giadinhthoxinh.Controllers
     public class CartController : Controller
     {
         // GET: Cart
-        public ActionResult Index()
-        {
-            return View();
-        }
         public ActionResult Cart()
         {
+            Cart giohang = (Cart)Session["giohang"];
+            var listitem = giohang.lstproduct;
+            ViewBag.list = listitem;
             return View();
         }
+        /*
+         * Thanh toán 
+         * giohang.lstproduct.Clear();
+         */
         public ActionResult Checkout()
         {
             return View();

@@ -49,7 +49,8 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.dtStartDay, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.dtStartDay, new { htmlAttributes = new { @class = "form-control" } })
+                            @*@Html.EditorFor(model => model.dtStartDay, new { htmlAttributes = new { @class = "form-control" } })*@
+                            <input class="form-control" name="dtStartDay" value="@Html.Raw(DateTime.Now.ToString("yyyy-MM-dd HH:mm").Replace(' ','T'))" type="datetime-local" />
                             @Html.ValidationMessageFor(model => model.dtStartDay, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -57,7 +58,8 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.dtEndDay, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.dtEndDay, new { htmlAttributes = new { @class = "form-control" } })
+                            <input class="form-control" name="dtEndDay" value="@Html.Raw(DateTime.Now.ToString("yyyy-MM-dd HH:mm").Replace(' ','T'))" type="datetime-local" />
+                            @*@Html.EditorFor(model => model.dtEndDay, new { htmlAttributes = new { @class = "form-control" } })*@
                             @Html.ValidationMessageFor(model => model.dtEndDay, "", new { @class = "text-danger" })
                         </div>
                     </div>

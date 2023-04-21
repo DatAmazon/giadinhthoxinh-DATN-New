@@ -30,7 +30,9 @@
                     </dt>
 
                     <dd>
-                        @Html.DisplayFor(model => model.sImage)
+                        @*@Html.DisplayFor(model => model.sImage)*@
+                        <img src="@Url.Content(Model.sImage)" style="width: 70px; height: 70px; object-fit: cover" />
+
                     </dd>
 
                     <dt>

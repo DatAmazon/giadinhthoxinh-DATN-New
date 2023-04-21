@@ -20,7 +20,8 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã sản phẩm")]
         public int FK_iProductID { get; set; }
         [Display(Name = "Giá bán")]
-        public Nullable<double> fPrice { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập giá bán")]
+        public double fPrice { get; set; }
         [Display(Name = "Ngày bắt đầu")]
         public Nullable<System.DateTime> dtStartDay { get; set; }
         [Display(Name = "Ngày kết thúc")]

@@ -24,12 +24,16 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã nhà cung cấp")]
         public int PK_iSupplierID { get; set; }
         [Display(Name = "Tên nhà cung cấp")]
+        [Required(ErrorMessage = "Vui lòng nhập tên nhà cung cấp")]
         public string sSupplierName { get; set; }
         [Display(Name = "SĐT")]
+        [Required(ErrorMessage = "Vui lòng nhập SĐT nhà cung cấp")]
         public string sPhone { get; set; }
         [Display(Name = "Email")]
+        [Required(ErrorMessage = "Vui lòng nhập Email nhà cung cấp")]
         public string sEmail { get; set; }
         [Display(Name = "Địa chỉ")]
+        [Required(ErrorMessage = "Vui lòng nhập địa chỉ nhà cung cấp")]
         public string sAddress { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

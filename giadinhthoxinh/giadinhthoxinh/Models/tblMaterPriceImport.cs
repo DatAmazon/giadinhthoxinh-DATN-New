@@ -20,7 +20,8 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã nguyên liệu")]
         public int FK_iMaterialID { get; set; }
         [Display(Name = "Giá nguyên liệu nhập")]
-        public Nullable<double> fMaterPriceImport { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập giá nhập")]
+        public double fMaterPriceImport { get; set; }
         [Display(Name = "Ngày bắt đầu")]
         public Nullable<System.DateTime> dtStartDay { get; set; }
         [Display(Name = "Ngày kết thúc")]

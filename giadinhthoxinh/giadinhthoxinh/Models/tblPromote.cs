@@ -24,8 +24,10 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã khuyến mãi")]
         public int PK_iPromoteID { get; set; }
         [Display(Name = "Tên khuyến mãi")]
+        [Required(ErrorMessage = "Vui lòng nhập tên khuyến mãi")]
         public string sPromoteName { get; set; }
         [Display(Name = "Tỉ lệ khuyến mãi")]
+        [Required(ErrorMessage = "Vui lòng nhập tỉ lệ khuyến mãi")]
         public Nullable<double> sPromoteRate { get; set; }
         [Display(Name = "Ngày bắt đầu")]
         public Nullable<System.DateTime> dtStartDay { get; set; }

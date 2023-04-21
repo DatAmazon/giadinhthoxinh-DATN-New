@@ -20,7 +20,7 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã sản phẩm")]
         public int FK_iProductID { get; set; }
         [Display(Name = "Hình ảnh")]
-        [Required]
+        //[Required(ErrorMessage = "Vui lòng nhập hình ảnh")]
         public string sImage { get; set; }
     
         public virtual tblProduct tblProduct { get; set; }

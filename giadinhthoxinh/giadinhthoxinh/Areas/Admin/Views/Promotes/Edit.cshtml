@@ -27,8 +27,6 @@
                 @Html.AntiForgeryToken()
 
                 <div class="form-horizontal">
-                    <h4>tblPromote</h4>
-                    <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     @Html.HiddenFor(model => model.PK_iPromoteID)
 
@@ -49,17 +47,17 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.dtStartDay, htmlAttributes: new { @class = "control-label col-md-2" })
+                           <label  class="control-label col-md-2">Ngày bắt đầu</label>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.dtStartDay, new { htmlAttributes = new { @class = "form-control" } })
+                            <input class="form-control" name="dtStartDay" value="@Html.Raw(DateTime.Now.ToString("yyyy-MM-dd HH:mm").Replace(' ','T'))" type="datetime-local" />
                             @Html.ValidationMessageFor(model => model.dtStartDay, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.dtEndDay, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <label class="control-label col-md-2">Ngày kết thúc</label>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.dtEndDay, new { htmlAttributes = new { @class = "form-control" } })
+                            <input class="form-control" name="dtEndDay" value="@Html.Raw(DateTime.Now.ToString("yyyy-MM-dd HH:mm").Replace(' ','T'))" type="datetime-local" />
                             @Html.ValidationMessageFor(model => model.dtEndDay, "", new { @class = "text-danger" })
                         </div>
                     </div>

@@ -45,7 +45,9 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.sImage)
+                                <img src="@Url.Content(item.sImage)" style="width: 70px; height: 70px; object-fit: cover"/>
+                  
+                                @*@Html.DisplayFor(modelItem => item.sImage)*@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.tblProduct.sProductName)

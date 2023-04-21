@@ -49,14 +49,25 @@ namespace giadinhthoxinh.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PK_iProductID,FK_iCategoryID,FK_iPromoteID,sProductName,sDescribe,fPrice,sColor,sSize,sImage,sUnit")] tblProduct tblProduct)
+        public ActionResult Create([Bind(Include = "PK_iProductID,FK_iCategoryID,FK_iPromoteID,sProductName,sDescribe,fPrice,sColor,sSize,sImage,sUnit")] tblProduct tblProduct, HttpPostedFileBase fileAnh)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && fileAnh.ContentLength > 0)
             {
+                //Lưu file
+                string rootFolder = Server.MapPath("/Data/");
+                string pathImage = rootFolder + fileAnh.FileName;
+                fileAnh.SaveAs(pathImage);
+                //Lưu url hình ảnh
+                tblProduct.sImage = "/Data/" + fileAnh.FileName;
+
                 db.tblProducts.Add(tblProduct);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            //else
+            //{
+            //    ModelState.AddModelError("FileAnh", "Ảnh không được để trống");
+            //}
 
             ViewBag.FK_iCategoryID = new SelectList(db.tblCategories, "PK_iCategoryID", "sCategoryName", tblProduct.FK_iCategoryID);
             ViewBag.FK_iPromoteID = new SelectList(db.tblPromotes, "PK_iPromoteID", "sPromoteName", tblProduct.FK_iPromoteID);
@@ -85,10 +96,18 @@ namespace giadinhthoxinh.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PK_iProductID,FK_iCategoryID,FK_iPromoteID,sProductName,sDescribe,fPrice,sColor,sSize,sImage,sUnit")] tblProduct tblProduct)
+        public ActionResult Edit([Bind(Include = "PK_iProductID,FK_iCategoryID,FK_iPromoteID,sProductName,sDescribe,fPrice,sColor,sSize,sImage,sUnit")] tblProduct tblProduct, HttpPostedFileBase fileAnh)
         {
             if (ModelState.IsValid)
             {
+                //Lưu file
+                string rootFolder = Server.MapPath("/Data/");
+                string pathImage = rootFolder + fileAnh.FileName;
+                fileAnh.SaveAs(pathImage);
+                //Lưu url hình ảnh
+                tblProduct.sImage = "/Data/" + fileAnh.FileName;
+
+
                 db.Entry(tblProduct).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

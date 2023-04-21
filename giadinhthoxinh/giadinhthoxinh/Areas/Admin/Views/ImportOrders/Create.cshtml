@@ -51,7 +51,8 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.dtDateAdded, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.dtDateAdded, new { htmlAttributes = new { @class = "form-control" } })
+                                @*@Html.EditorFor(model => model.dtDateAdded, new { htmlAttributes = new { @class = "form-control" } })*@
+                                <input class="form-control" name="dtDateAdded" value="@Html.Raw(DateTime.Now.ToString("yyyy-MM-dd HH:mm").Replace(' ','T'))" type="datetime-local" />
                                 @Html.ValidationMessageFor(model => model.dtDateAdded, "", new { @class = "text-danger" })
                             </div>
                         </div>

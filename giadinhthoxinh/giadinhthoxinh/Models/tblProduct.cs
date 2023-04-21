@@ -35,10 +35,13 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã khuyến mãi")]
         public int FK_iPromoteID { get; set; }
         [Display(Name = "Tên sản phẩm")]
+        [Required(ErrorMessage = "Vui lòng nhập tên sản phẩm")]
         public string sProductName { get; set; }
         [Display(Name = "Mô tả")]
+        [Required(ErrorMessage = "Vui lòng nhập mô tả")]
         public string sDescribe { get; set; }
         [Display(Name = "Giá bán")]
+        [Required(ErrorMessage = "Vui lòng nhập giá bán")]
         public Nullable<double> fPrice { get; set; }
         [Display(Name = "Màu sắc")]
         public string sColor { get; set; }
@@ -47,6 +50,7 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Hình ảnh")]
         public string sImage { get; set; }
         [Display(Name = "Đơn vị")]
+        [Required(ErrorMessage = "Vui lòng nhập ")]
         public string sUnit { get; set; }
     
         public virtual tblCategory tblCategory { get; set; }

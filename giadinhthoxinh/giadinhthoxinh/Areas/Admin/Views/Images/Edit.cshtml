@@ -22,7 +22,7 @@
             <h3 class="text-danger text-lg ">Sửa thông tin hình ảnh sản phẩm</h3>
         </div>
         <div class="card-body">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("edit", "images", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
                 @Html.AntiForgeryToken()
 
@@ -39,9 +39,9 @@
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.sImage, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <label class="control-label col-md-2">Hình ảnh</label>
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.sImage, new { htmlAttributes = new { @class = "form-control" } })
+                            <input type="file" name="fileAnh" />
                             @Html.ValidationMessageFor(model => model.sImage, "", new { @class = "text-danger" })
                         </div>
                     </div>

@@ -329,8 +329,8 @@ F:\DATN-New\giadinhthoxinh\giadinhthoxinh\bin\System.Web.WebPages.Razor.xml
 F:\DATN-New\giadinhthoxinh\giadinhthoxinh\bin\Newtonsoft.Json.xml
 F:\DATN-New\giadinhthoxinh\giadinhthoxinh\bin\Antlr3.Runtime.pdb
 F:\DATN-New\giadinhthoxinh\giadinhthoxinh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\DATN-New\giadinhthoxinh\giadinhthoxinh\obj\Debug\giadinhthoxinh.csproj.AssemblyReference.cache
 F:\DATN-New\giadinhthoxinh\giadinhthoxinh\obj\Debug\giadinhthoxinh.csproj.CoreCompileInputs.cache
 F:\DATN-New\giadinhthoxinh\giadinhthoxinh\obj\Debug\giadinhthoxinh.csproj.CopyComplete
 F:\DATN-New\giadinhthoxinh\giadinhthoxinh\obj\Debug\giadinhthoxinh.dll
 F:\DATN-New\giadinhthoxinh\giadinhthoxinh\obj\Debug\giadinhthoxinh.pdb
+F:\DATN-New\giadinhthoxinh\giadinhthoxinh\obj\Debug\giadinhthoxinh.csproj.AssemblyReference.cache

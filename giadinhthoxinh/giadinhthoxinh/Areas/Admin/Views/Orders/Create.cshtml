@@ -63,9 +63,9 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.dInvoidDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <label class="control-label col-md-2">Ngày lập</label>
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.dInvoidDate, new { htmlAttributes = new { @class = "form-control" } })
+                                <input class="form-control" name="dInvoidDate" value="@Html.Raw(DateTime.Now.ToString("yyyy-MM-dd HH:mm").Replace(' ','T'))" type="datetime-local" />
                                 @Html.ValidationMessageFor(model => model.dInvoidDate, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -79,9 +79,10 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.iDeliveryMethod, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <label class="control-label col-md-2">Hình thức thanh toán</label>
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.iDeliveryMethod, new { htmlAttributes = new { @class = "form-control" } })
+                                <input type="radio" name="iDeliveryMethod" value="0"  style="margin-left: 20px"/>Thanh toán online 
+                                <input type="radio" name="iDeliveryMethod" value="1" style="margin-left: 40px" checked/>Thanh toán khi nhận hàng
                                 @Html.ValidationMessageFor(model => model.iDeliveryMethod, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -89,15 +90,17 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.fSurcharge, htmlAttributes: new { @class = "control-label col-md-2" })
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.fSurcharge, new { htmlAttributes = new { @class = "form-control" } })
+                                @*@Html.EditorFor(model => model.fSurcharge, new { htmlAttributes = new { @class = "form-control"} })*@
+                                <input type="text" name="fSurcharge" class="form-control" value="0" />
                                 @Html.ValidationMessageFor(model => model.fSurcharge, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.iPaid, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <label class="control-label col-md-2">Đã thanh toán</label>
                             <div class="col-md-10">
-                                @Html.EditorFor(model => model.iPaid, new { htmlAttributes = new { @class = "form-control" } })
+                                <input type="radio" name="iPaid" value="0" style="margin-left: 20px"/>Chưa thanh toán
+                                <input type="radio" name="iPaid" value="1" style="margin-left: 40px" checked/>Đã thanh toán
                                 @Html.ValidationMessageFor(model => model.iPaid, "", new { @class = "text-danger" })
                             </div>
                         </div>

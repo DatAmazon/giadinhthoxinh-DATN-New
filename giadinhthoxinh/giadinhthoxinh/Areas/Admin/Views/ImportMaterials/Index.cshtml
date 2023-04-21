@@ -53,7 +53,9 @@
                                 @Html.DisplayFor(modelItem => item.iQuatity)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.fPrice)
+                                @*@Html.DisplayFor(modelItem => item.fPrice)*@
+                                @string.Format("{0:#,0}", item.fPrice) vnđ
+
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.tblImportOrder.sDeliver)

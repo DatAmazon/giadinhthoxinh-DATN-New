@@ -20,13 +20,13 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã phiếu nhập")]
         public int FK_iImportOrderID { get; set; }
         [Display(Name = "Mã sản phẩm")]
-        public Nullable<int> FK_iProductID { get; set; }
+        public int FK_iProductID { get; set; }
         [Display(Name = "Số lượng")]
-        [Required]
-        public Nullable<int> iQuatity { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập số lượng")]
+        public int iQuatity { get; set; }
         [Display(Name = "Giá nhập")]
-        [Required]
-        public Nullable<double> fPrice { get; set; }
+        [Required(ErrorMessage = "Vui lòng nhập giá nhập")]
+        public double fPrice { get; set; }
     
         public virtual tblImportOrder tblImportOrder { get; set; }
         public virtual tblProduct tblProduct { get; set; }

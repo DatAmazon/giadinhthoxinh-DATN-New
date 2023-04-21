@@ -75,41 +75,47 @@
 
             <div class="col-lg-5">
                 <div class="product_details">
-                    <div class="product_details_title">
-                        <h2>@Model.sProductName</h2>
-                        <p>@Model.sDescribe</p>
-                    </div>
-                    <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-                        <span class="ti-truck"></span><span>miễn phí vận chuyển</span>
-                    </div>
-                    <div class="original_price">@oldPrice</div>
-                    <div class="product_price">@Model.fPrice</div>
-                    <ul class="star_rating">
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                    </ul>
-                    <div class="product_color">
-                        <span>Select Color:</span>
-                        <ul>
-                            <li style="background: @Model.sColor"></li>
-                            @*<li style="background: #252525"></li>
-                                <li style="background: #60b3f3"></li>*@
-                        </ul>
-                    </div>
-                    <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-                        <span>Quantity:</span>
-                        <div class="quantity_selector mb-3">
-                            <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                            <span id="quantity_value">@quantity</span>
-                            <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                    @using (Html.BeginForm("ProductDetail", "Home", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="product_id" value="@Model.PK_iProductID" />
+                        <div class="product_details_title">
+                            <h2>@Model.sProductName</h2>
+                            <p>@Model.sDescribe</p>
                         </div>
-                        @*<div class="red_button red_button1 mb-3" ><a href="#" style=" width: 140px; text-transform: none; font-size: 14px;">Thêm vào giỏ hàng</a></div>*@
-                        <div class="red_button add_to_cart_button show-add-cart"><a href="/cart/cart" >thêm vào giỏ hàng</a></div>
-                        @*<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>*@
-                    </div>
+                        <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
+                            <span class="ti-truck"></span><span>miễn phí vận chuyển</span>
+                        </div>
+                        <div class="original_price">@oldPrice</div>
+                        <div class="product_price">@Model.fPrice</div>
+                        <ul class="star_rating">
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        </ul>
+                        <div class="product_color">
+                            <span>Màu sắc:</span>
+                            <ul>
+                                <li style="background: @Model.sColor"></li>
+                                @*<li style="background: #252525"></li>
+                    <li style="background: #60b3f3"></li>*@
+                            </ul>
+                        </div>
+                        <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+                            <span>Số lượng:</span>
+                            <div class="quantity_selector mb-3">
+                                <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                <input type="text" style="width:50px;" name="quantity_value" id="quantity_value" value="@quantity"/>
+                                <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                            @*<div class="red_button red_button1 mb-3" ><a href="#" style=" width: 140px; text-transform: none; font-size: 14px;">Thêm vào giỏ hàng</a></div>*@
+                            <input class="red_button add_to_cart_button show-add-cart" type="submit" name="submit" value="Thêm vào giỏ" />
+                            @*<div class="red_button add_to_cart_button show-add-cart"><a href="/home/productdetail?id=@Model.PK_iProductID&sl=@quantity " />Thêm vào giỏ</div>*@
+                            @*<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>*@
+                        </div>
+                    }
                 </div>
             </div>
         </div>

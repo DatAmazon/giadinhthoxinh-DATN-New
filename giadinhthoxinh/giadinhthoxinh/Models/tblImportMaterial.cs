@@ -22,10 +22,10 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã nguyên liệu")]
         public int FK_iMaterialID { get; set; }
         [Display(Name = "Số lượng")]
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập số lượng")]
         public Nullable<int> iQuatity { get; set; }
         [Display(Name = "Giá nhập")]
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập giá nhập")]
         public Nullable<double> fPrice { get; set; }
     
         public virtual tblImportOrder tblImportOrder { get; set; }

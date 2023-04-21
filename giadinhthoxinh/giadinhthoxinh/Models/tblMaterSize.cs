@@ -20,6 +20,7 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã nguyên liệu")]
         public int FK_iMaterialID { get; set; }
         [Display(Name = "Kích thước")]
+        [Required(ErrorMessage = "Vui lòng nhập kích thước nguyên liệu")]
         public string sMaterSize { get; set; }
 
         public virtual tblMaterial tblMaterial { get; set; }

@@ -20,6 +20,7 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã nguyên liệu")]
         public int FK_iMaterialID { get; set; }
         [Display(Name = "Màu nguyên liệu")]
+        [Required(ErrorMessage = "Vui lòng nhập màu sắc")]
         public string sMaterColor { get; set; }
 
         public virtual tblMaterial tblMaterial { get; set; }

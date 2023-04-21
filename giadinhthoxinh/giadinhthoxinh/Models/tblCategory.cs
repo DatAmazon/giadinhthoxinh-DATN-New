@@ -23,6 +23,7 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã danh mục")]
         public int PK_iCategoryID { get; set; }
         [Display(Name = "Tên danh mục")]
+        [Required(ErrorMessage = "Vui lòng nhập tên danh mục")]
         public string sCategoryName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

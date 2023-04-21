@@ -24,6 +24,7 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã quyền")]
         public int PK_iPermissionID { get; set; }
         [Display(Name = "Tên quyền")]
+        [Required(ErrorMessage = "Vui lòng nhập tên quyền")]
         public string sPermissionName { get; set; }
         [Display(Name = "Trạng thái")]
         public Nullable<int> iState { get; set; }

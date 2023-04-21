@@ -29,7 +29,7 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã nhà cung cấp")]
         public int FK_iSupplierID { get; set; }
         [Display(Name = "Ngày nhập")]
-        public Nullable<System.DateTime> dtDateAdded { get; set; }
+        public System.DateTime dtDateAdded { get; set; }
         [Display(Name = "Người giao hàng")]
         public string sDeliver { get; set; }
         [Display(Name = "Trạng thái")]

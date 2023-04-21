@@ -20,6 +20,7 @@ namespace giadinhthoxinh.Models
         [Display(Name = "Mã sản phẩm")]
         public int FK_iProductID { get; set; }
         [Display(Name = "Kích thước")]
+        [Required(ErrorMessage = "Vui lòng nhập kích thước")]
         public string sSizeName { get; set; }
 
         public virtual tblProduct tblProduct { get; set; }

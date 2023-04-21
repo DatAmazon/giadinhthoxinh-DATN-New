@@ -48,14 +48,22 @@ namespace giadinhthoxinh.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PK_iImageID,FK_iProductID,sImage")] tblImage tblImage)
+        public ActionResult Create([Bind(Include = "PK_iImageID,FK_iProductID,sImage")] tblImage tblImage, HttpPostedFileBase fileAnh)
         {
-            if (ModelState.IsValid)
+            if (fileAnh.ContentLength > 0 && ModelState.IsValid)
             {
+                //Lưu file
+                string rootFolder = Server.MapPath("/Data/");
+                string pathImage = rootFolder + fileAnh.FileName;
+                fileAnh.SaveAs(pathImage);
+                //Lưu url hình ảnh
+                tblImage.sImage = "/Data/" + fileAnh.FileName;
+
                 db.tblImages.Add(tblImage);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
 
             ViewBag.FK_iProductID = new SelectList(db.tblProducts, "PK_iProductID", "sProductName", tblImage.FK_iProductID);
             return View(tblImage);
@@ -82,10 +90,17 @@ namespace giadinhthoxinh.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PK_iImageID,FK_iProductID,sImage")] tblImage tblImage)
+        public ActionResult Edit([Bind(Include = "PK_iImageID,FK_iProductID,sImage")] tblImage tblImage, HttpPostedFileBase fileAnh)
         {
             if (ModelState.IsValid)
             {
+                //Lưu file
+                string rootFolder = Server.MapPath("/Data/");
+                string pathImage = rootFolder + fileAnh.FileName;
+                fileAnh.SaveAs(pathImage);
+                //Lưu url hình ảnh
+                tblImage.sImage = "/Data/" + fileAnh.FileName;
+
                 db.Entry(tblImage).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

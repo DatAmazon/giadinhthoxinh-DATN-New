@@ -44,6 +44,36 @@ namespace giadinhthoxinh.Controllers
 
             return View(item);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ProductDetail(int product_id, int quantity_value)
+        {
+            //xu ly them vao gio
+                Cart giohang = (Cart)Session["giohang"];
+                ProductInCart sanpham = new ProductInCart();
+                sanpham.ProductID = product_id;
+                sanpham.Quatity = quantity_value;
+                int check = 0;
+                if (giohang.lstproduct != null && giohang.lstproduct.Count > 0)
+                    foreach (ProductInCart a in giohang.lstproduct)
+                    {
+                        if (a.ProductID == sanpham.ProductID)
+                        {
+                            a.Quatity++;
+                            check = 1;
+                            break;
+                        }
+                    }
+                if (check == 0)
+                {
+                    giohang.lstproduct.Add(sanpham);
+                }
+
+
+            return RedirectToAction("ProductDetail", new { id = product_id });
+        //    var item = db.tblProducts.Find(product_id);
+         //   return View(item);
+        }
         public ActionResult Checkout()
         {
             ViewBag.Message = "Your application description page.";
